@@ -18,7 +18,7 @@ body{
 .navigation_bar {
     background: #0077A2;
     padding: 14px 0;
-    display: flex;
+    display: flex; /* Flexbox */
     justify-content: center;
     gap: 18px;
     border-top: 4px solid #C6A664;
