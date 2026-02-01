@@ -1,0 +1,175 @@
+
+/* ===============General=============== */
+body{
+    background-color: #F5F7F8;
+}
+
+.site-title {
+    background: #002E5D;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 14px 10px;
+}
+
+.navigation_bar {
+    background: #0077A2;
+    padding: 14px 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    border-top: 4px solid #C6A664;
+    align-items: center;
+}
+
+.navigation_bar a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    background: #002E5D;
+    color: #FFFFFF;
+    padding: 8px 14px;
+    border: 2px solid #1B1B1B;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.35);
+    transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+/* This is for the hover pseudo class*/
+.navigation_bar a:hover {
+    background: #444444;
+    transform: translateY(-1px);
+}
+
+/* This is for the current page's menu item standing out*/
+.navigation_bar a.active {
+    background: #FFFFFF;
+    color: #111111;
+    border-color: #FFFFFF;
+}
+
+.text{
+    font-size: clamp(16px, 2.5vw, 28px);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 600;
+    margin-top: 8px;
+
+}
+
+/* Another hover pseudo class just because it is fun */
+.text:hover{
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 40px;
+    background: #002E5D;
+    text-align: center;
+    padding: 18px 10px 22px;
+}
+
+footer img {
+    width: min(300px, 80%);
+    height: auto;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+footer .footer-text {
+    font-size: 11px; /* For the smaller font*/
+    color: #9AA0A6; /* For the different font color */
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+/* ===============Home Page=============== */
+.row{
+display: flex; /* Flexbox */
+justify-content: center;
+gap: 60px;
+flex-wrap: wrap;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+
+.figures{
+    text-align: center; 
+    margin: 0;
+}
+
+.image_defaults{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.quote {
+    text-align: center;
+    margin: 26px auto 0;
+    font-style: italic;
+    opacity: 0.9;
+    color: #333333;
+}
+
+.author {
+    font-style: normal;
+    margin-top: 6px;
+}
+
+.home-text {
+    text-align: center;
+    margin: 38px auto 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* ===============About Page=============== */
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: min(700px, 90%);
+  background: #FFFFFF;
+}
+
+th, td {
+  border: 1px solid #C6A664;
+  padding: 12px 14px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+th {
+  background: #002E5D;
+  color: #FFFFFF;
+}
+
+caption {
+  caption-side: top;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  color: #002E5D;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  color: #002E5D;
+}
+
+ul {
+  width: min(700px, 90%);
+  margin: 0 auto 30px;
+  font-family: Arial, sans-serif;
+  
+}
+
+/* ===============Contact Page=============== */
+.contact_window{
+    max-width: 600px; 
+    margin: 0 auto;
+}
