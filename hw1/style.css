@@ -17,7 +17,7 @@ body{
 .navigation_bar {
     background: #0077A2;
     padding: 14px 0;
-    display: flex; /* Flexbox */
+    display: flex;
     justify-content: center;
     gap: 18px;
     border-top: 4px solid #C6A664;
@@ -43,6 +43,14 @@ body{
 }
 
 .img_format {
-    display: flex;
+    display: block;
     margin: auto;
+    max-width: 90%;
+    display: block;
+    margin: 1rem auto;
+    object-fit: cover;
+}
+
+.center_text {
+    text-align: center;
 }
