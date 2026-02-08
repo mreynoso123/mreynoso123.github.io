@@ -1,11 +1,11 @@
 /* ===============General=============== */
 body{
-    background-color: #F5F7F8;
+    background-color: rgb(253,251,212);
 }
 
 .site-title {
-    background: #002E5D;
-    color: #FFFFFF;
+    background: rgb(128,239,128);
+    color: black;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 44px;
@@ -15,7 +15,7 @@ body{
 }
 
 .navigation_bar {
-    background: #0077A2;
+    background: #9D9DCC;
     padding: 14px 0;
     display: flex;
     justify-content: center;
