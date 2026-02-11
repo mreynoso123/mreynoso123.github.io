@@ -32,4 +32,32 @@ function checkGuess() {
         feedback.style.color = "red";
         return;
     }
+
+    attempts++;
+    console.log("Attempts: " + attempts);
+    feedback.style.color = "orange";
+    if (guess == randomNumber) {
+        feedback.textContent = "You guessed it! You won!"
+        feedback.style.color = "darkgreen";
+        gameOver();
+    } else {
+        document.querySelector("#guesses").textContent += guess + " ";
+        if (attempts == 7){
+            feedback.textContent = "Sorry, you lost!";
+            feedback.style.color = "red";
+            gameOver();
+        } else if (guess > randomNumber) {
+            feedback.textContent = "Guess was high";
+        } else {
+            feedback.textContent = "Guess was low";
+        }
+    }
+}
+
+function gameOver() {
+    let guessBtn = document.querySelector("#guessBtn");
+    let resetBtn = document.querySelector("#resetBtn");
+    guessBtn.style.display = "none"; //hides Guess button
+    resetBtn.style.display = "inline"; //displays Reset button
+
 }
