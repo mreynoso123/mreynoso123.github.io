@@ -1,9 +1,18 @@
-//alert("running external JS code!")
-
 //Global variables
-/* floor rounds down to nearest integer
-(Math.random() * 99) +1 generates random int 1 through 99 */
-let randomNumber = Math.floor(Math.random() * 99) + 1;
+let randomNumber;
+let attempts = 0;
 
-console.log(randomNumber);
-//document.querySelector("h1").style.color = "red";
+initializeGame();
+
+function initializeGame() {
+    /* floor rounds down to nearest integer
+    (Math.random() * 99) +1 generates random int 1 through 99 */
+    randomNumber = Math.floor(Math.random() * 99) + 1;
+    console.log("randomNumber: " + randomNumber);
+
+    //hiding the Reset button
+    document.querySelector("#resetBtn").style.display = "none";
+
+    //adding focus to textbox
+    document.querySelector("#playerGuess").focus();
+}
