@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+    background-image: url("https://media.istockphoto.com/id/1005045506/vector/twisted-colored-numbers-on-white-background.jpg?s=2048x2048&w=is&k=20&c=lZ4QP1_uwCrlthbZPjvRUiZL7_H1LcLMBdH4RSMcb0w=");
+
+}
+
+#guessH1{
+    background-color: green;
+    color: black;
+    display: inline;
+
+}
+
+#guessPText{
+    background-color: green;
+    color: black;    
+}
+
+#guessResult {
+    background-color: black;
+}
