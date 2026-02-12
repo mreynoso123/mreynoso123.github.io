@@ -1,6 +1,6 @@
 console.log("Running...");
 
-const max = 10;
+const max = 99;
 let correctNumber = Math.floor(Math.random() * max);
 let correctMessage = "Congrats!";
 let attempts = 0;
