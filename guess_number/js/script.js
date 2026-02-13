@@ -69,7 +69,7 @@ function checkGuess() {
 
     if (guess == randomNumber) {
         feedback.textContent = "You guessed it! You won!"
-        feedback.style.color = "darkgreen";
+        feedback.style.color = "lightgreen";
         totalWins++;
         gameOver();
     } else {

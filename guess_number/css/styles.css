@@ -1,28 +1,118 @@
-/* 4 CSS properties */
-body {
-    text-align: center;
-    background-image: url("../img/numbers_border.jpg");
-    background-size: cover;
-    font-family: 'Segoe UI', Verdana;
-    
+h1 {
+    color: #00e9ff;
+    /*text color*/
 }
 
-/* 6 CSS properties (10 total)*/
+h2 {
+    color: darkorchid;
+}
+
+div {
+    margin-top: 10px;
+    /*space above the div element*/
+}
+
+body {
+    text-align: center;
+    /*horizontal text alignment set to center the text*/
+
+    background-image: url("../img/numbers_border.jpg");
+    /*sets a background picture*/
+
+    background-size: cover;
+    /*scales the background image to cover the window size*/
+
+    background-position: center;
+    /*moves the background to the center*/
+
+    background-attachment: fixed;
+    /*prevents the background from scrolling*/
+
+    font-family: 'Segoe UI', Verdana;
+    /*text font*/
+
+    line-height: 1.4;
+    /*line spacing of text*/
+}
+
 .main {
     background-color: rgba(19, 19, 20, 0.5);
-    width: 500px;
-    height: 200px;
-    margin: auto;
+    /*background fill color*/
+
+    max-width: 500px;
+    /*set a max width for the main element*/
+
+    width: 90%;
+    /*main element will take up 90% of the screen*/
+
+    margin: 1.5rem auto;
+    /*the outer spacing*/
+
     font-size: 24px;
+    /*text size*/
+
     border-radius: 25px;
+    /*rounded corners*/
+
+    padding: 20px;
+    /*inner padding*/
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    /*drop shadow effect*/
 }
 
 .Btn {
     font-size: 20px;
-    border-radius: 25px;
+    text-transform: uppercase;
+    /*changes letter case to uppercase*/
+
+    letter-spacing: 0.5px;
+    /*spacing between letters*/
+
+    transition: 0.3s;
+    /*animation when hovering over*/
+
+    border-radius: 10px;
+    border: none;
+    /*border styling*/
+
+    cursor: pointer;
+    /*changes mouse cursor when hovering over the button*/
+
+    padding: 5px 10px;
 }
 
-/* 1 CSS property (11 total) */
-.feedback{
+.Btn:hover {
+    background-color: #0088ff;
+}
+
+.Btn:active {
+    transform: scale(0.75);
+    /*cool effect that scales the button down when clicked*/
+}
+
+.feedback {
     text-shadow: 0 0 2px #00e9ff, 0 0 20px #0088ff;
+    /*adds a cool shadow effect to the text*/
+    
+    transition: 0.3s;
+}
+
+#playerGuess {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#wins {
+    color: green;
+    font-weight: 600;
+    /*adds weight or thickness to the font*/
+}
+
+#losses {
+    color: red;
+    font-weight: 600;
 }
