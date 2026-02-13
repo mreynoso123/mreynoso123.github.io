@@ -65,7 +65,7 @@ function checkGuess() {
     attempts++;
     attemptsRemaining.textContent = "Attempts remaining: " + (attemptsLeft - attempts);
     console.log("Attempts: " + attempts);
-    feedback.style.color = "orange";
+    feedback.style.color = "#00e9ff";
 
     if (guess == randomNumber) {
         feedback.textContent = "You guessed it! You won!"
@@ -90,7 +90,7 @@ function checkGuess() {
 function gameOver() {
     let guessBtn = document.querySelector("#guessBtn");
     let resetBtn = document.querySelector("#resetBtn");
-    
+
     //updates win/loss immediately when gameOver is called
     document.querySelector("#wins").textContent = totalWins;
     document.querySelector("#losses").textContent = totalLosses;

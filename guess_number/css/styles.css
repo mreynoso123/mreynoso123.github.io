@@ -1,7 +1,28 @@
-
-/* 3 CSS properties */
+/* 4 CSS properties */
 body {
     text-align: center;
     background-image: url("../img/numbers_border.jpg");
     background-size: cover;
+    font-family: 'Segoe UI', Verdana;
+    
+}
+
+/* 6 CSS properties (10 total)*/
+.main {
+    background-color: rgba(19, 19, 20, 0.5);
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    font-size: 24px;
+    border-radius: 25px;
+}
+
+.Btn {
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+/* 1 CSS property (11 total) */
+.feedback{
+    text-shadow: 0 0 2px #00e9ff, 0 0 20px #0088ff;
 }
