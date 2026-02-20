@@ -37,28 +37,36 @@ function gradeQuiz(){
     score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
+    let q4Response = document.querySelector("input[name=q4]:checked").value;
     console.log(q1Response + " " + q2Response);
 
     //Grading q1Response
-    if (q1Response == "sacramento") {
+    if (q1Response == "shrek") {
         rightAnswer(1);
     } else {
         wrongAnswer(1);
     }
 
     //Grading q2Response
-    if (q2Response == "mo") {
+    if (q2Response == "lf") {
         rightAnswer(2);
     } else {
         wrongAnswer(2);
     }
 
     //Grading q3Response
-    if(document.querySelector("#Jefferson").checked && document.querySelector("#Roosevelt").checked && 
-    !document.querySelector("#Jackson").checked && !document.querySelector("#Franklin").checked){
+    if(document.querySelector("#Donkey").checked && document.querySelector("#Puss").checked && 
+    !document.querySelector("#Doris").checked && !document.querySelector("#Hook").checked){
         rightAnswer(3);
     } else {
         wrongAnswer(3);
+    }
+
+    //Grading q4Response
+    if (q4Response == "Fiona") {
+        rightAnswer(4);
+    } else {
+        wrongAnswer(4);
     }
 
     document.querySelector("#totalScore").innerHTML=`Total Score: ${score}`;
