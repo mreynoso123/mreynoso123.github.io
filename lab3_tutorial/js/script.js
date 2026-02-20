@@ -1,16 +1,28 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
+function isFormValid(){
+    let isValid = true;
+    if(document.querySelector("#q1").value == ""){
+        isValid = false;
+        document.querySelector("#validationFdbk").innerHTML="Question 1 was not answered";
+    }
+
+    return isValid;
+}
+
+
 function gradeQuiz(){
     console.log("Grading quiz...");
     document.querySelector("#validationFdbk").innerHTML=""; //resets validation feedback
-    /*if (!isFormValid()) {
+    if (!isFormValid()) {
         return;
-    } */
+    }
 
     //variables
     let score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
-    console.log(q1Response);
+    let q2Response = document.querySelector("#q2").value;
+    console.log(q1Response + " " + q2Response);
 
     //Grading q1Response
     if (q1Response == "sacramento") {
@@ -21,6 +33,18 @@ function gradeQuiz(){
     } else {
         document.querySelector("#q1Feedback").innerHTML="Incorrect!";
         document.querySelector("#q1Feedback").className="bg-warning text-white";
+        document.querySelector("#markImg1").innerHTML="<img src='img/xmark.png' alt='Xmark'>";
+    }
+
+    //Grading q2Response
+    if (q2Response == "mo") {
+        document.querySelector("#q2Feedback").innerHTML="Correct!";
+        document.querySelector("#q2Feedback").className="bg-success text-white";
+        document.querySelector("#markImg1").innerHTML="<img src='img/checkmark.png' alt='Checkmark'>";
+        score += 20;
+    } else {
+        document.querySelector("#q2Feedback").innerHTML="Incorrect!";
+        document.querySelector("#q2Feedback").className="bg-warning text-white";
         document.querySelector("#markImg1").innerHTML="<img src='img/xmark.png' alt='Xmark'>";
     }
 
