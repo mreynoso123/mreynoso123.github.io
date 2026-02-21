@@ -2,12 +2,13 @@ document.querySelector("button").addEventListener("click", gradeQuiz);
 
 //global variables
 var score = 0;
+var attempts = localStorage.getItem("total_attempts");
 displayQ4Choices();
 
 function displayQ4Choices() {
     let q4ChiocesArray = ["Gingy", "Fiona", "Dragon", "Merlin"];
     q4ChiocesArray = _.shuffle(q4ChiocesArray);
-    
+
     for ( let i=0; i < q4ChiocesArray.length; i++) {
         document.querySelector("#q4Choices").innerHTML += ` <input type="radio" name="q4" id="${q4ChiocesArray[i]}" value="${q4ChiocesArray[i]}"> <label for="${q4ChiocesArray[i]}" > ${q4ChiocesArray[i]}</label>`;
     }
@@ -80,5 +81,7 @@ function gradeQuiz(){
     }
 
     document.querySelector("#totalScore").innerHTML=`Total Score: ${score}`;
+    document.querySelector("#totalAttempts").innerHTML=`Total Attempts: ${++attempts}`;
+    localStorage.setItem("total_attempts", attempts);
 }
 
