@@ -2,44 +2,44 @@ document.querySelector("button").addEventListener("click", gradeQuiz);
 
 //global variables
 var score = 0;
-var attempts = localStorage.getItem("total_attempts");
+var attempts = Number(localStorage.getItem("total_attempts")) || 0;
 displayQ4Choices();
 
 function displayQ4Choices() {
     let q4ChiocesArray = ["Gingy", "Fiona", "Dragon", "Merlin"];
     q4ChiocesArray = _.shuffle(q4ChiocesArray);
 
-    for ( let i=0; i < q4ChiocesArray.length; i++) {
+    for (let i = 0; i < q4ChiocesArray.length; i++) {
         document.querySelector("#q4Choices").innerHTML += ` <input type="radio" name="q4" id="${q4ChiocesArray[i]}" value="${q4ChiocesArray[i]}"> <label for="${q4ChiocesArray[i]}" > ${q4ChiocesArray[i]}</label>`;
     }
 }
 
-function isFormValid(){
+function isFormValid() {
     let isValid = true;
-    if(document.querySelector("#q1").value == ""){
+    if (document.querySelector("#q1").value == "") {
         isValid = false;
-        document.querySelector("#validationFdbk").innerHTML="Question 1 was not answered";
+        document.querySelector("#validationFdbk").innerHTML = "Question 1 was not answered";
     }
 
     return isValid;
 }
 
 function rightAnswer(index) {
-    document.querySelector(`#q${index}Feedback`).innerHTML="Correct!";
-    document.querySelector(`#q${index}Feedback`).className="bg-success text-white";
-    document.querySelector(`#markImg${index}`).innerHTML="<img src='img/checkmark.png' alt='Checkmark'>";
+    document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
+    document.querySelector(`#q${index}Feedback`).className = "bg-success text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/checkmark.png' alt='Checkmark'>";
     score += 20;
 }
 
 function wrongAnswer(index) {
-    document.querySelector(`#q${index}Feedback`).innerHTML="Incorrect!";
-    document.querySelector(`#q${index}Feedback`).className="bg-warning text-white";
-    document.querySelector(`#markImg${index}`).innerHTML="<img src='img/xmark.png' alt='Xmark'>";
+    document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
+    document.querySelector(`#q${index}Feedback`).className = "bg-warning text-white";
+    document.querySelector(`#markImg${index}`).innerHTML = "<img src='img/xmark.png' alt='Xmark'>";
 }
 
-function gradeQuiz(){
+function gradeQuiz() {
     console.log("Grading quiz...");
-    document.querySelector("#validationFdbk").innerHTML=""; //resets validation feedback
+    document.querySelector("#validationFdbk").innerHTML = ""; //resets validation feedback
     if (!isFormValid()) {
         return;
     }
@@ -49,7 +49,10 @@ function gradeQuiz(){
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
     let q4Response = document.querySelector("input[name=q4]:checked").value;
-    console.log(q1Response + " " + q2Response);
+    let q5Response = document.querySelector("#q5").value;
+    let q5CorrectNum = 3;
+
+    //console.log(q1Response + " " + q2Response);
 
     //Grading q1Response
     if (q1Response == "shrek") {
@@ -66,8 +69,8 @@ function gradeQuiz(){
     }
 
     //Grading q3Response
-    if(document.querySelector("#Donkey").checked && document.querySelector("#Puss").checked && 
-    !document.querySelector("#Doris").checked && !document.querySelector("#Hook").checked){
+    if (document.querySelector("#Donkey").checked && document.querySelector("#Puss").checked &&
+        !document.querySelector("#Doris").checked && !document.querySelector("#Hook").checked) {
         rightAnswer(3);
     } else {
         wrongAnswer(3);
@@ -80,18 +83,25 @@ function gradeQuiz(){
         wrongAnswer(4);
     }
 
-    
+    //Grading q5Response
+    if (q5Response == q5CorrectNum) {
+        rightAnswer(5);
+    } else {
+        wrongAnswer(5);
+    }
+
     let totalScore = document.querySelector("#totalScore");
     let congratsMessage = document.querySelector("#congratsMessage");
-    if (score < 80) {
-        totalScore.innerHTML=`Total Score: ${score}`;
-        totalScore.style.color = "red";
-    } else {
-        totalScore.innerHTML=`Total Score: ${score}`;
+
+    if (score > 80) {
+        totalScore.innerHTML = `Total Score: ${score}`;
         congratsMessage.innerHTML = `Great Job!`;
         totalScore.style.color = "green";
+    } else {
+        totalScore.innerHTML = `Total Score: ${score}`;
+        totalScore.style.color = "red";
     }
-    document.querySelector("#totalAttempts").innerHTML=`Total Attempts: ${++attempts}`;
+    document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
 }
 
