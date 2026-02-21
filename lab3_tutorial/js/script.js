@@ -80,7 +80,17 @@ function gradeQuiz(){
         wrongAnswer(4);
     }
 
-    document.querySelector("#totalScore").innerHTML=`Total Score: ${score}`;
+    
+    let totalScore = document.querySelector("#totalScore");
+    let congratsMessage = document.querySelector("#congratsMessage");
+    if (score < 80) {
+        totalScore.innerHTML=`Total Score: ${score}`;
+        totalScore.style.color = "red";
+    } else {
+        totalScore.innerHTML=`Total Score: ${score}`;
+        congratsMessage.innerHTML = `Great Job!`;
+        totalScore.style.color = "green";
+    }
     document.querySelector("#totalAttempts").innerHTML=`Total Attempts: ${++attempts}`;
     localStorage.setItem("total_attempts", attempts);
 }
