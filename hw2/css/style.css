@@ -1,0 +1,82 @@
+.background {
+    display: block;
+    width: 600px;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.4;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td{
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th{
+  background-color: #f0f0f0;
+}
+
+input[type="number"], input[type="text"], select{
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+h3{
+  margin-top: 20px;
+}
+
+#validPromo{
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+#shipImg{
+  width: 150px;
+  height: auto;
+  margin: 10px 0;
+}
+
+.Btn {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.Btn:hover {
+    background-color: #0088ff;
+}
+
+.Btn:active {
+    transform: scale(0.75);
+}

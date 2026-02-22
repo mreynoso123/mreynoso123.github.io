@@ -28,7 +28,7 @@ function calcTotal() {
     let shipImg = document.querySelector("#shipImg");
 
     if (shipSelect == "dine") {
-        shipImg.src = "img/dine.png";
+        shipImg.src = "img/dine.jpg";
         shipImg.alt = "Dine In";
     } else if (shipSelect == "take") {
         shipImg.src = "img/take.png";
@@ -84,10 +84,10 @@ function resetCart() {
     document.querySelector("#promoInput").value = "";
     document.querySelector("#validPromo").textContent = "";
     document.querySelector("#validPromo").style.color = "";
-    document.querySelector("#subtotal").textContent = "Subtotal: ";
-    document.querySelector("#shipping").textContent = "Shipping: ";
-    document.querySelector("#tax").textContent = "Tax: ";
-    document.querySelector("#discount").textContent = "Discount: ";
-    document.querySelector("#total").textContent = "Total: ";
+    document.querySelector("#subtotal").textContent = "";
+    document.querySelector("#shipping").textContent = "";
+    document.querySelector("#tax").textContent = "";
+    document.querySelector("#discount").textContent = "";
+    document.querySelector("#total").textContent = "";
 
 }
