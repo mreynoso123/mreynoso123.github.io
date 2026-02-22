@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 2: JavaScript</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <h1>Shopping Cart</h1>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Line Total</th>
+        </tr>
+        <tr>
+            <td>🍔 Burger</td>
+            <td>$8.00</td>
+            <td><input type="number" id="qty0" min="0" value="0"></td>
+            <td><span id="itemTotal0"></span></td>
+        </tr>
+        <tr>
+            <td>🍕 Pizza</td>
+            <td>$5.00</td>
+            <td><input type="number" id="qty1" min="0" value="0"></td>
+            <td><span id="itemTotal1"></span></td>
+        </tr>
+        <tr>
+            <td>🥤 Soda</td>
+            <td>$2.00</td>
+            <td><input type="number" id="qty2" min="0" value="0"></td>
+            <td><span id="itemTotal2"></span></td>
+        </tr>
+    </table>
+
+    <h3>Shipping Options</h3>
+    <img id="shipImg" src="" alt="" width="150">
+    <select id="shippingSelect">
+        <option value="">Select One</option>
+        <option value="dine">Dine In</option>
+        <option value="take">Take Out</option>
+        <option value="deliv">Delivery</option>
+    </select>
+    Promo Code: <input type="text" id="promoInput"><span id="validPromo"></span>
+    <br><br>
+    <button id="calcBtn">Calculate Total</button>
+    <br><br>
+    <span id="subtotal">Subtotal: </span><br>
+    <span id="shipping">Shipping: </span><br>
+    <span id="tax">Tax: </span><br>
+    <span id="discount">Discount: </span><br>
+    <span id="total">Total: </span><br>
+
+    
+</body>
+</html>
