@@ -5,6 +5,7 @@
 document.querySelector("#zip").addEventListener("change", displayCity);
 document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#username").addEventListener("change", checkUsername);
+document.querySelector("#password").addEventListener("click", suggestPass);
 
 /* this uses an "on submit" event listener for the <form>
 this event listener also requires a parameter including all of the info associated w/ the event 
@@ -88,7 +89,7 @@ function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
-    let passwordError = document.querySelector("#”passwordError”");//is not a value, just a <span>
+    let passwordError = document.querySelector("#passwordError");//is not a value, just a <span>
     let retypePass = document.querySelector("#retypePass").value;
 
     /* if (username.length == 0) {
@@ -105,14 +106,14 @@ function validateForm(e) {
 
     //checks the password length
     if (password.length < 6) {
-        document.querySelector("#”passwordError”").innerHTML = "Password must have at least 6 characters long!";
+        document.querySelector("#passwordError").innerHTML = "Password must have at least 6 characters long!";
         passwordError.style.color = "red";
         isValid = false;
     }
 
     //checks matching password fields
     if (retypePass != password) {
-        document.querySelector("#”passwordError”").innerHTML = "Passwords do not match!"
+        document.querySelector("#passwordError").innerHTML = "Passwords do not match!"
         passwordError.style.color = "red";
         isValid = false;
     }
@@ -122,4 +123,15 @@ function validateForm(e) {
         e.preventDefault();
     }
 
+}
+
+async function suggestPass(){
+    let suggestPass = document.querySelector("#suggestedPwd");
+    let url = `https://csumb.space/api/suggestedPassword.php?length=8`
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+
+    document.querySelector("#suggestedPwd").innerHTML = "Password suggestion: " + data.password;
+    suggestPass.style.color = "blue";
 }
