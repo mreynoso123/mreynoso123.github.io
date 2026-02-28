@@ -1,3 +1,56 @@
-body{
+h1{
     text-align: center;
+}
+
+body {
+    text-align: left;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.4;
+}
+
+select {
+    margin: 5px;
+    padding: 5px;
+    background-color: lightgreen;
+}
+
+option {
+    background-color: lavender;
+}
+
+#textDiv {
+    background-color: rgba(127, 255, 212, 0.5);
+    border-radius: 25px;
+    padding: 30px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+input[type="number"], input[type="text"], input[type="password"], select{
+  padding: 6px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+#submit {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+#submit:hover {
+    background-color: #0088ff;
+}
+
+#submit:active {
+    transform: scale(0.85);
 }
