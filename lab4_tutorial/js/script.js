@@ -17,6 +17,7 @@ document.querySelector("#signupForm").addEventListener("submit", function (event
 async function displayCity() {
     //alert(document.querySelector("#zip").value)
     let zipCode = document.querySelector("#zip").value;
+    let zipcodeError = document.querySelector("#zipcodeError");
 
     //${zipCode} let's the user input change the web API by the zipcode variable
     let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`
@@ -24,6 +25,16 @@ async function displayCity() {
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
+
+    //A "Zip code not found" message is displayed, if that's the case.
+    if (data === false) { //the URL returns the JSON literal false (without quotes)
+        document.querySelector("#zipcodeError").innerHTML = " Zip code not found!"
+        zipcodeError.style.color = "red";
+        document.querySelector("#city").innerHTML = "";
+        document.querySelector("#latitude").innerHTML = "";
+        document.querySelector("#longitude").innerHTML = "";
+        return; //need to return early
+    }
 
     //innerHTML is used to retrieve, set, or modify/override HTML content 
     document.querySelector("#city").innerHTML = data.city;
@@ -76,9 +87,33 @@ async function checkUsername() {
 function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
-    if (username.length == 0) {
+    let password = document.querySelector("#password").value;
+    let passwordError = document.querySelector("#”passwordError”");//is not a value, just a <span>
+    let retypePass = document.querySelector("#retypePass").value;
+
+    /* if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username Required!";
         usernameError.style.color = "red";
+        isValid = false;
+    } */
+
+    if (username.length < 3) {
+        document.querySelector("#usernameError").innerHTML = "Username must have at least 3 characters!";
+        usernameError.style.color = "red";
+        isValid = false;
+    }
+
+    //checks the password length
+    if (password.length < 6) {
+        document.querySelector("#”passwordError”").innerHTML = "Password must have at least 6 characters long!";
+        passwordError.style.color = "red";
+        isValid = false;
+    }
+
+    //checks matching password fields
+    if (retypePass != password) {
+        document.querySelector("#”passwordError”").innerHTML = "Passwords do not match!"
+        passwordError.style.color = "red";
         isValid = false;
     }
 
