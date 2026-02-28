@@ -7,45 +7,53 @@
 
 <body>
     <h1> Sign Up </h1>
-    First Name:<input type="text" name="fName"><br>
-    Last Name: <input type="text" name="lName"><br>
-    Gender:
-    <!-- male and female are grouped together by name="gender", so only one can be chosen -->
-    <input type="radio" name="gender" value="m">Male
-    <input type="radio" name="gender" value="f">Female<br>
 
-    <!-- name="zip" is the key that will be paired with the user's input value when the form is submitted to the server. -->
-    Zip Code: <input type="text" id="zip" name="zip"><br>
-    City: <span id="city"></span> <br>
-    Latitude: <span id="latitude"></span><br>
-    Longitude: <span id="longitude"></span><br><br>
+    <!-- form is for data that needs to be submitted to a web server 
+        or when the data needs to be displayed on a new page 
+        
+        action specifies the landing page after submitting -->
+    <form action = "welcome.html">
+        First Name:<input type="text" name="fName"><br>
+        Last Name: <input type="text" name="lName"><br>
+        Gender:
+        <!-- male and female are grouped together by name="gender", so only one can be chosen -->
+        <input type="radio" name="gender" value="m">Male
+        <input type="radio" name="gender" value="f">Female<br>
 
-    State:
-    <!-- when using select, the options require value, not id -->
-    <select id="state" name="state">
-        <option>Select One</option>
-        <option value="ca">California</option>
-        <option value="ny">New York</option>
-        <option value="tx">Texas</option>
-    </select> <br>
+        <!-- name="zip" is the key that will be paired with the user's input value when the form is submitted to the server. -->
+        Zip Code: <input type="text" id="zip" name="zip"><br>
+        City: <span id="city"></span> <br>
+        Latitude: <span id="latitude"></span><br>
+        Longitude: <span id="longitude"></span><br><br>
 
+        State:
+        <!-- when using select, the options require value, not id -->
+        <select id="state" name="state">
+            <option>Select One</option>
+            <option value="ca">California</option>
+            <option value="ny">New York</option>
+            <option value="tx">Texas</option>
+        </select> <br>
 
-    Select a County: <select id="county"></select><br>
+        Select a County: <select id="county"></select><br>
 
+        Desired Username:
+        <input type="text" id="username"><br>
 
-    Desired Username:
-    <input type="text" id="username"><br>
-    <span id="usernameError"></span><br>
+        <!--this is where checkUsername will display-->
+        <span id="usernameError"></span><br> 
 
-<!-- for password fields, use type="password" -->
-    Password: <input type="password">
-    <span id=”suggestedPwd”></span> <br>
+        <!-- for password fields, use type="password" -->
+        Password: <input type="password">
+        <span id=”suggestedPwd”></span> <br>
 
-    Type Password Again: <input type="password"><br>
+        Type Password Again: <input type="password"><br>
 
-    <span id=”passwordError”></span>
-    <!-- for submit fields, use type="submit" and value will be the text within the button -->
-    <input type="submit" value="Sign up!">
+        <span id=”passwordError”></span>
+        <!-- for submit fields, use type="submit" and value will be the text within the button -->
+        <input type="submit" value="Sign up!">
+    </form>
+
 
 
     <script src="js/script.js"></script>
