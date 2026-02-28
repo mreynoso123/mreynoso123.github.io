@@ -4,6 +4,7 @@
 //use change instead of click because click doesn't work properly with input type="text"
 document.querySelector("#zip").addEventListener("change", displayCity);
 document.querySelector("#state").addEventListener("change", displayCounties);
+document.querySelector("#username").addEventListener("change", checkUsername);
 
 //APIs require async functions w/ await keywords
 async function displayCity(){
@@ -44,4 +45,23 @@ async function displayCounties(){
     for (let i of data){
         countylist.innerHTML += `<option> ${i.county}</option>`
     }
+}
+
+async function checkUsername() {
+    let username = document.querySelector("#username").value;
+    let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    let usernameError = document.querySelector("#usernameError"); //where the message will display
+
+    //available is the category within the API, not a "catch-all" variable
+    if(data.available){
+        usernameError.innerHTML = "Username available!";
+        usernameError.style.color = "green";
+    } else {
+        usernameError.innerHTML = "Username is taken!";
+        usernameError.style.color = "red";
+    }
+
 }
