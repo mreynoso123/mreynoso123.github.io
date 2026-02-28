@@ -12,7 +12,7 @@
         or when the data needs to be displayed on a new page 
         
         action specifies the landing page after submitting -->
-    <form action = "welcome.html">
+    <form id= "signupForm" action = "welcome.html">
         First Name:<input type="text" name="fName"><br>
         Last Name: <input type="text" name="lName"><br>
         Gender:
@@ -30,7 +30,7 @@
         <!-- when using select, the options require value, not id -->
         <select id="state" name="state">
             <option>Select One</option>
-            <option value="ca">California</option>
+            <option value="ca">California</option> <!--use value!!! not id!!-->
             <option value="ny">New York</option>
             <option value="tx">Texas</option>
         </select> <br>
