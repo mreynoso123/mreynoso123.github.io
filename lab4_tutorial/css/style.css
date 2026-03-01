@@ -1,4 +1,4 @@
-h1{
+h1 {
     text-align: center;
 }
 
@@ -20,6 +20,20 @@ option {
     background-color: lavender;
 }
 
+input[type="text"],
+input[type="password"],
+select {
+    padding: 6px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    width: 220px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #222;
+}
+
 #textDiv {
     background-color: rgba(127, 255, 212, 0.5);
     border-radius: 25px;
@@ -28,12 +42,6 @@ option {
     display: flex;
     flex-direction: column;
     justify-self: center;
-}
-
-input[type="number"], input[type="text"], input[type="password"], select{
-  padding: 6px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
 }
 
 #submit {
@@ -53,4 +61,14 @@ input[type="number"], input[type="text"], input[type="password"], select{
 
 #submit:active {
     transform: scale(0.85);
+}
+
+.error {
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.hint {
+    margin-left: 8px;
+    font-style: italic;
 }
