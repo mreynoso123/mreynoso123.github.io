@@ -48,6 +48,7 @@ async function displayCity() {
 
 async function displayCounties() {
     let state = document.querySelector("#state").value; //this matches the eventListener
+    if (state === "") return;
     let url = `https://csumb.space/api/countyListAPI.php?state=${state}`;
     let response = await fetch(url);
     let data = await response.json();
@@ -91,6 +92,7 @@ async function checkUsername() {
 function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
+    let usernameError = document.querySelector("#usernameError");
     let password = document.querySelector("#password").value;
     let passwordError = document.querySelector("#passwordError");//is not a value, just a <span>
     let retypePass = document.querySelector("#retypePass").value;
