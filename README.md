@@ -12,3 +12,5 @@ https://mreynoso123.github.io/guess_number/ (JS Intro: Guess a Number Game Tutor
 https://mreynoso123.github.io/lab3_tutorial/ (Lab 3: JS Quiz)
 
 https://mreynoso123.github.io/hw2/ (HW 2: JavaScript)
+
+https://mreynoso123.github.io/lab4_tutorial/ (Lab 4: Sign Up Page)
