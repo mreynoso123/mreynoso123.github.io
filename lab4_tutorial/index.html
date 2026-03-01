@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id = "textDiv">
+    <div id="textDiv">
         <h1> Sign Up </h1>
 
         <!-- form is for data that needs to be submitted to a web server 
@@ -33,10 +33,10 @@
             State:
             <!-- when using select, the options require value, not id -->
             <select id="state" name="state">
-                <option>Select One</option>
-                <option value="ca">California</option> <!--use value!!! not id!!-->
+                <option id="">Select One</option> <!--use value!!! not id!!-->
+                <!--<option value="ca">California</option> 
                 <option value="ny">New York</option>
-                <option value="tx">Texas</option>
+                <option value="tx">Texas</option> -->
             </select> <br>
 
             Select a County: <select id="county"></select><br>
@@ -55,7 +55,7 @@
 
             <span id="passwordError"></span><br>
             <!-- for submit fields, use type="submit" and value will be the text within the button -->
-            <input type="submit" id ="submit" value="Sign up!">
+            <input type="submit" id="submit" value="Sign up!">
         </form>
     </div>
 

@@ -7,6 +7,9 @@ document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#username").addEventListener("change", checkUsername);
 document.querySelector("#password").addEventListener("click", suggestPass);
 
+//https://www.javascripttutorial.net/javascript-dom/javascript-domcontentloaded/
+document.addEventListener("DOMContentLoaded", displayStates);
+
 /* this uses an "on submit" event listener for the <form>
 this event listener also requires a parameter including all of the info associated w/ the event 
 Notice that the curly brace is inside of the eventlistener parenthesis*/
@@ -125,7 +128,7 @@ function validateForm(e) {
 
 }
 
-async function suggestPass(){
+async function suggestPass() {
     let suggestPass = document.querySelector("#suggestedPwd");
     let url = `https://csumb.space/api/suggestedPassword.php?length=8`
     let response = await fetch(url);
@@ -134,4 +137,23 @@ async function suggestPass(){
 
     document.querySelector("#suggestedPwd").innerHTML = "Password suggestion: " + data.password;
     suggestPass.style.color = "blue";
+}
+
+async function displayStates() {
+    let stateSelect = document.querySelector("#state");
+    let url = "https://csumb.space/api/allStatesAPI.php";
+    let response = await fetch(url);
+    let data = await response.json();
+
+    // reset the options and add a placeholder
+    stateSelect.innerHTML = `<option value="">Select One</option>`;
+
+    for (let s of data) {
+        /* The states array has a usps of all 2 letter state abbreviation, 
+        so I set those to value with toLowerCase which is needed for the API URL in displayCounties()
+        Then I just add the state name to the option  */
+        stateSelect.innerHTML += `<option value="${s.usps.toLowerCase()}">${s.state}</option>`;
+    }
+
+
 }
